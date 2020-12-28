@@ -12,7 +12,5 @@ import Auth0Client from './Auth0Client';
 import { Auth0ClientOptions } from './global';
 import './global';
 export * from './global';
-export default function createAuth0Client(
-  options: Auth0ClientOptions
-): Promise<Auth0Client>;
+export default function createAuth0Client(options: Auth0ClientOptions): Promise<Auth0Client>;
 export { Auth0Client };

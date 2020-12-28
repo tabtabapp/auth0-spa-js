@@ -4,7 +4,4 @@ import { WorkerRefreshTokenMessage } from './worker.types';
  * @param message The message to send
  * @param to The worker to send the message to
  */
-export declare const sendMessage: (
-  message: WorkerRefreshTokenMessage,
-  to: Worker
-) => Promise<unknown>;
+export declare const sendMessage: (message: WorkerRefreshTokenMessage, to: Worker) => Promise<unknown>;

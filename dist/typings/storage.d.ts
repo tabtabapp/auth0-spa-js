@@ -1,13 +1,13 @@
 interface ClientStorageOptions {
-  daysUntilExpire: number;
+    daysUntilExpire: number;
 }
 /**
  * Defines a type that handles storage to/from a storage location
  */
 export declare type ClientStorage = {
-  get<T extends Object>(key: string): T;
-  save(key: string, value: any, options?: ClientStorageOptions): void;
-  remove(key: string): void;
+    get<T extends Object>(key: string): T;
+    save(key: string, value: any, options?: ClientStorageOptions): void;
+    remove(key: string): void;
 };
 /**
  * A storage protocol for marshalling data to/from cookies
