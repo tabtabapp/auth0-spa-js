@@ -419,9 +419,9 @@ export default class Auth0Client {
    * @typeparam TUser The type to return, has to extend {@link User}. Defaults to {@link User} when omitted.
    * @param options
    */
-  public async getUser<TUser extends User = User>(
+  public getUser<TUser extends User = User>(
     options: GetUserOptions = {}
-  ): Promise<TUser | undefined> {
+  ): TUser | undefined {
     const audience = options.audience || this.options.audience || 'default';
     const scope = getUniqueScopes(this.defaultScope, this.scope, options.scope);
 
@@ -445,7 +445,7 @@ export default class Auth0Client {
    *
    * @param options
    */
-  public async getIdTokenClaims(options: GetIdTokenClaimsOptions = {}) {
+  public getIdTokenClaims(options: GetIdTokenClaimsOptions = {}) {
     const audience = options.audience || this.options.audience || 'default';
     const scope = getUniqueScopes(this.defaultScope, this.scope, options.scope);
 
@@ -744,9 +744,8 @@ export default class Auth0Client {
    * otherwise returns `false`.
    *
    */
-  public async isAuthenticated() {
-    const user = await this.getUser();
-    return !!user;
+  public get isAuthenticated() {
+    return !!this.getUser();
   }
 
   /**
